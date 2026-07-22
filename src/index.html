@@ -1,0 +1,14 @@
+<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NAMUA HyperFrames Editor</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header><div class="brand">NAMUA <b>HyperFrames Editor</b></div><div class="toolbar"><button id="newBtn">새 프로젝트</button><button id="loadBtn">불러오기</button><button id="saveBtn">저장</button><select id="aspect"><option>16:9</option><option>9:16</option><option>1:1</option></select><select id="previewQuality"><option value="auto">자동</option><option value="360">360p</option><option value="540" selected>540p</option><option value="720">720p</option><option value="original">원본</option></select><button id="exportBtn" class="accent">MP4 내보내기</button></div></header>
+<main>
+<aside class="library"><h3>미디어</h3><div class="gridBtns"><button data-add="video">＋ 영상</button><button data-add="audio">＋ 음악</button><button data-add="image">＋ 이미지</button><button data-add="subtitle">＋ 자막</button></div><button id="addText">＋ 텍스트</button><div id="assets"></div><div id="status">준비됨</div></aside>
+<section class="workspace">
+<div class="previewWrap"><div id="stage" class="stage"><video id="preview" playsinline></video><div id="overlayLayer"></div><div class="safe"></div></div></div>
+<div class="transport"><button id="prevFrame">◀|</button><button id="playBtn">▶</button><button id="nextFrame">|▶</button><span id="time">00:00:00 / 00:00:00</span><button id="fitTimeline">전체 보기</button><input id="zoom" type="range" min="20" max="500" value="100"></div>
+<div id="timeline" class="timeline"><div id="ruler"></div><div id="playhead"></div><div id="tracks"></div></div>
+</section>
+<aside class="properties"><h3>속성</h3><div id="propEmpty">타임라인 또는 미리보기의 요소를 선택하세요.</div><form id="propForm" class="hidden">
+<label>이름<input id="pName"></label><label>시작<input id="pStart" type="number" step="0.01"></label><label>길이<input id="pDuration" type="number" step="0.01"></label><label>미디어 시작<input id="pMediaStart" type="number" step="0.01"></label><label>텍스트<textarea id="pText"></textarea></label><label>X %<input id="pX" type="number"></label><label>Y %<input id="pY" type="number"></label><label>너비 %<input id="pW" type="number"></label><label>회전<input id="pRotation" type="number"></label><label>글자 크기<input id="pFontSize" type="number"></label><label>글자색<input id="pColor" type="color"></label><label>볼륨<input id="pVolume" type="range" min="0" max="2" step="0.05"></label><label>밝기<input id="pBrightness" type="range" min="0.2" max="2" step="0.05"></label><label>대비<input id="pContrast" type="range" min="0.2" max="2" step="0.05"></label><label>채도<input id="pSaturation" type="range" min="0" max="3" step="0.05"></label><button id="deleteBtn" type="button">삭제</button></form></aside>
+</main>
+<script src="renderer.js"></script></body></html>
