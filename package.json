@@ -1,0 +1,27 @@
+{
+  "name": "namua-hyperframes-editor",
+  "version": "0.2.0",
+  "description": "Real-time timeline video editor with HyperFrames export",
+  "main": "src/main.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "electron .",
+    "start": "electron .",
+    "doctor": "node scripts/doctor.js",
+    "test": "node scripts/smoke-test.js",
+    "pack:win": "electron-builder --win portable"
+  },
+  "dependencies": {
+    "@hyperframes/player": "^0.7.67"
+  },
+  "devDependencies": {
+    "electron": "^37.2.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.namua.hyperframeseditor",
+    "productName": "NAMUA HyperFrames Editor",
+    "files": ["src/**/*", "scripts/**/*", "package.json", "README.md"],
+    "win": {"target": "portable"}
+  }
+}
